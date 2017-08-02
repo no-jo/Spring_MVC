@@ -59,6 +59,7 @@ public class BookController {
 	}
 
 	@RequestMapping("/book")
+	//TODO spring moze od razu rzutowac string na long, nie ma pozniej 
 	public ModelAndView singleBookById(@RequestParam("id") String id) throws AmbiguousIdException {
 		BookTo bookTo = bookService.findBookByID(id);
 		ModelAndView modelAndView = new ModelAndView();
