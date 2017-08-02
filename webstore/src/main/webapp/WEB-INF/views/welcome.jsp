@@ -23,10 +23,10 @@
 				<div class="thumbnail">
 					<div class="caption">
 						<h3>Books</h3>
-						<p>Display all books</p>
+						<p>View available books</p>
 						<p>
 							<a href="/webstore/books" class="btn btn-default"> <span
-								class="glyphicon-info-sign glyphicon" /></span> Show all books
+								class="glyphicon-info-sign glyphicon" /></span> Browse
 							</a>
 						</p>
 					</div>

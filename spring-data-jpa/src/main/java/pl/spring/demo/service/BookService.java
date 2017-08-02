@@ -1,5 +1,6 @@
 package pl.spring.demo.service;
 
+import pl.spring.demo.service.impl.AmbiguousIdException;
 import pl.spring.demo.to.BookTo;
 
 import java.util.List;
@@ -12,5 +13,5 @@ public interface BookService {
 
     BookTo saveBook(BookTo book);
     void deleteBook(Long id);
-	List<BookTo> findBookByID(String id);
+	BookTo findBookByID(String id) throws AmbiguousIdException;
 }
