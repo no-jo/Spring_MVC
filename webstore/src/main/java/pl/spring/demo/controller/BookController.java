@@ -8,7 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -79,7 +81,31 @@ public class BookController {
 		return modelAndView;
 	}
 
-	// TODO: Implement GET / POST methods for "add book" functionality
+	@RequestMapping(value = "/add", method = RequestMethod.GET)
+	public ModelAndView addBook() {
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("newBook", new BookTo());
+		modelAndView.setViewName(ViewNames.ADD_BOOK);
+		return modelAndView;
+	}
+
+	@RequestMapping(value = "/add", method = RequestMethod.POST)
+	public ModelAndView createBook(@ModelAttribute("newBook") BookTo bookTo) {
+		bookService.saveBook(bookTo);
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject(ModelConstants.BOOK, bookTo);
+		modelAndView.setViewName(ViewNames.BOOK);
+		return modelAndView;
+	} 
+	
+	@RequestMapping(value = "/delete")
+	public ModelAndView deleteBook(@ModelAttribute("bookToRemove") BookTo bookTo) {
+		ModelAndView modelAndView = new ModelAndView();
+		bookService.deleteBook(bookTo.getId());
+		modelAndView.addObject(ModelConstants.BOOK, bookTo);
+		modelAndView.setViewName(ViewNames.DELETE);
+		return modelAndView;
+	}
 
 	/**
 	 * Binder initialization

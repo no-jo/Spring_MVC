@@ -7,3 +7,4 @@ insert into book (id, title, authors, status) values (6, 'Hell book', 'Janusz Ja
 
 insert into userentity (id, user_name, password) values (1, 'admin', 'admin');
 insert into userentity (id, user_name, password) values (2, 'password', 'password');
+insert into userentity (id, user_name, password) values (3, 'lib', 'lib');

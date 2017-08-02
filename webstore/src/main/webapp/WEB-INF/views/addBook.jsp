@@ -31,24 +31,24 @@
 					<label class="control-label col-lg-2" for="name">Title</label>
 					<div class="col-lg-10">
 						<form:input id="title" path="title" type="text"
-							class="form:input-large" />
+							class="form:input-large" required = "required"/>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="control-label col-lg-2" for="name">Author</label>
 					<div class="col-lg-10">
 						<form:input id="authors" path="authors" type="text"
-							class="form:input-large" />
+							class="form:input-large" required = "required"/>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="control-label col-lg-2" for="status">status</label>
 					<div class="col-lg-10">
-						<form:radiobutton path="status" value="FREE" />
+						<form:radiobutton path="status" value="FREE" required = "required" />
 						Free
-						<form:radiobutton path="status" value="LOAN" />
+						<form:radiobutton path="status" value="LOAN" required = "required"/>
 						Loan
-						<form:radiobutton path="status" value="MISSING" />
+						<form:radiobutton path="status" value="MISSING" required = "required"/>
 						Missing
 					</div>
 				</div>
