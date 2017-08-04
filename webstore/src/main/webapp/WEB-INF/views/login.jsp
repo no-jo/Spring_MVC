@@ -72,6 +72,9 @@
 									value="Submit">
 							</fieldset>
 						</form>
+						<div>
+							<a href="<spring:url value="/" />" class="btn btn-lg btn-primary btn-block">Cancel</a>
+						</div>
 					</div>
 				</div>
 			</div>

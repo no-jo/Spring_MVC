@@ -24,7 +24,7 @@
 							class="glyphicon glyphicon-log-in"></span> Login</a></li>
 				</sec:authorize>
 				<sec:authorize access="isAuthenticated()">
-					<li><a href="#"> You are logged in as:  <sec:authentication
+					<li><a href="#"> You are logged in as: <sec:authentication
 								property="principal.username" />
 					</a></li>
 					<li><a href="<c:url value="/j_spring_security_logout"/>">
@@ -39,12 +39,12 @@
 			<div class="container">
 				<h1>Delete book</h1>
 				<p>Book ${book.id} was deleted.</p>
+				<a href="<spring:url value="/books" />" class="btn btn-default">
+					<span class="glyphicon-hand-left glyphicon"></span> back to search
+				</a>
 			</div>
 		</div>
 	</section>
-			<a href="<spring:url value="/books" />" class="btn btn-default"> <span
-				class="glyphicon-hand-left glyphicon"></span> back to search
-			</a>
 
 </body>
 </html>

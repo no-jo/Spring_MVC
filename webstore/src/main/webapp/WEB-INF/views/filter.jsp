@@ -23,7 +23,7 @@
 							class="glyphicon glyphicon-log-in"></span> Login</a></li>
 				</sec:authorize>
 				<sec:authorize access="isAuthenticated()">
-					<li><a href="#"> You are logged in as:  <sec:authentication
+					<li><a href="#"> You are logged in as: <sec:authentication
 								property="principal.username" />
 					</a></li>
 					<li><a href="<c:url value="/j_spring_security_logout"/>">
@@ -43,52 +43,32 @@
 	</section>
 
 	<section class="container">
-		<div class="row">
-			<div class="col-sm-6 col-md-12" style="padding-bottom: 15px">
-
-					<div class="caption">
-						<h3>Books</h3>
-						<p>Enter search criteria</p>
-
-						<form action="/webstore/books/find" class="form-horizontal">
-							<fieldset>
-								<div class="form-group">
-									<label class="control-label col-lg-2" for="name">Title</label>
-									<div class="col-lg-30">
-										<input type="text" name="title" class="form:input-large">
-									</div>
-								</div>
-
-								<div class="form-group">
-									<label class="control-label col-lg-2" for="name">Author</label>
-									<div class="col-lg-30">
-										<input type="text" name="author" class="form:input-large">
-									</div>
-								</div>
-
-								<div class="form-group">
-									<div class="col-lg-offset-2 col-lg-10">
-										<input type="submit" value="Search" class="btn btn-primary">
-
-
-							<a href="/webstore/books/all" class="btn btn-default"> <span
-								class="glyphicon-info-sign glyphicon" /></span> Show all books
-							</a> <a href="<spring:url value="/" />" class="btn btn-default">
-								<span class="glyphicon-hand-left glyphicon"></span> back
-							</a>
-									</div>
-
-								</div>
-							</fieldset>
-						</form>
-						
-						
+		<form action="/webstore/books/find" class="form-horizontal">
+			<fieldset>
+				<div class="form-group">
+					<label for="title" class="col-lg-2 control-label">Title:</label>
+					<div class="col-lg-10">
+						<input type="text" class="form-control" name="title">
 					</div>
 				</div>
-			</div>
-
+				<div class="form-group">
+					<label for="author" class="col-lg-2 control-label">Author:</label>
+					<div class="col-lg-10">
+						<input type="text" class="form-control" name="author">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-lg-offset-2 col-lg-10">
+						<input type="submit" value="Search" class="btn btn-primary">
+						<a href="/webstore/books/all" class="btn btn-default"> <span
+							class="glyphicon-info-sign glyphicon" /></span> Show all books
+						</a> <a href="<spring:url value="/" />" class="btn btn-default"> <span
+							class="glyphicon-hand-left glyphicon"></span> back
+						</a>
+					</div>
+				</div>
+			</fieldset>
+		</form>
 	</section>
-
-
 </body>
 </html>

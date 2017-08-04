@@ -23,7 +23,7 @@
 							class="glyphicon glyphicon-log-in"></span> Login</a></li>
 				</sec:authorize>
 				<sec:authorize access="isAuthenticated()">
-					<li><a href="#"> You are logged in as:  <sec:authentication
+					<li><a href="#"> You are logged in as: <sec:authentication
 								property="principal.username" />
 					</a></li>
 					<li><a href="<c:url value="/j_spring_security_logout"/>">
@@ -38,6 +38,9 @@
 			<div class="container">
 				<h1>Books</h1>
 				<p>This page contains all informations about books</p>
+				<a href="<spring:url value="/books" />" class="btn btn-default"> <span
+					class="glyphicon-hand-left glyphicon"></span> back
+				</a>
 			</div>
 		</div>
 	</section>
@@ -54,15 +57,16 @@
 							<p>Status: ${book.status}</p>
 							<p>
 								<a href=" <spring:url value="/books/book?id=${book.id}" /> "
-									class="btn btn-primary" > <span
-									class="glyphicon-info-sign glyphicon" /></span> Details
-								</a> 
-								<a href=" <spring:url value="/books/delete?id=${book.id}" /> "
 									class="btn btn-primary"> <span
-									class="glyphicon-remove glyphicon" /></span> Delete
+									class="glyphicon-info-sign glyphicon" /></span> Details
 								</a>
+								<sec:authorize access="hasRole('ROLE_LIB')">
+									<a href=" <spring:url value="/books/delete?id=${book.id}" /> "
+										class="btn btn-warning"> <span
+										class="glyphicon-remove glyphicon" /></span> Delete
+									</a>
+								</sec:authorize>
 							</p>
-
 						</div>
 					</div>
 				</div>

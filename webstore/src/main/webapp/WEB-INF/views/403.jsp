@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <html>
 <head>
@@ -22,7 +23,7 @@
 							class="glyphicon glyphicon-log-in"></span> Login</a></li>
 				</sec:authorize>
 				<sec:authorize access="isAuthenticated()">
-					<li><a href="#"> You are logged in as:  <sec:authentication
+					<li><a href="#"> You are logged in as: <sec:authentication
 								property="principal.username" />
 					</a></li>
 					<li><a href="<c:url value="/j_spring_security_logout"/>">
@@ -32,16 +33,19 @@
 			</ul>
 		</div>
 	</nav>
-	<section>
-		<div class="jumbotron">
-			<div class="container">
-				<h1>Error 403</h1>
-			</div>
-		</div>
-	</section>
+	<div class="jumbotron" style="background: white"></div>
 	<div class="alert alert-danger" role="alert">
-		<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-		<span class="sr-only">Error:</span> ${errorMessage}
+		<h1 class="text-center">Error 403</h1>
+		<section class="text-center">
+			<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+			<span class="sr-only">Error:</span> ${errorMessage} 
+			<section>
+			<a
+				href="<spring:url value="/" />" class="btn btn-default"> <span
+				class="glyphicon-home glyphicon"></span> home
+			</a>
+			</section>
+		</section>
 	</div>
 </body>
 </html>
