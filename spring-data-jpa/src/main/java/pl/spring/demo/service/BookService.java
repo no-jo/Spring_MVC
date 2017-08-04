@@ -13,5 +13,5 @@ public interface BookService {
 
     BookTo saveBook(BookTo book);
     void deleteBook(Long id);
-	BookTo findBookByID(String id) throws AmbiguousIdException;
+	BookTo findBookByID(long id) throws AmbiguousIdException;
 }

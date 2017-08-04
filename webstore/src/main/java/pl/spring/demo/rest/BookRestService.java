@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @ResponseBody
 public class BookRestService {
 
-	// TODO: Inject properly book service
+	// TODOs: Inject properly book service
 
-	// TODO: implement all necessary CRUD operations as a rest service
+	// TODOs: implement all necessary CRUD operations as a rest service
 
-	// TODO: implement some search methods considering single request parameters
+	// TODOs: implement some search methods considering single request parameters
 	// / multiple request parameters / array request parameters
 
 	

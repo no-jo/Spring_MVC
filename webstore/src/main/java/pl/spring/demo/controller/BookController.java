@@ -33,17 +33,8 @@ public class BookController {
 	@Autowired
 	private BookService bookService;
 
-	//
-	// @RequestMapping
-	// public String list(Model model) {
-	// // TODO: implement default method
-	// return ViewNames.BOOKS;
-	// }
-
 	@RequestMapping
 	public String list(Model model) {
-		// TODO: implement default method uzupelnic ten model o ksiazki
-		// return allBooks();
 		return ViewNames.FILTER;
 	}
 
@@ -59,8 +50,7 @@ public class BookController {
 	}
 
 	@RequestMapping("/book")
-	//TODO spring moze od razu rzutowac string na long, nie ma pozniej 
-	public ModelAndView singleBookById(@RequestParam("id") String id) throws AmbiguousIdException {
+	public ModelAndView singleBookById(@RequestParam("id") long id) throws AmbiguousIdException {
 		BookTo bookTo = bookService.findBookByID(id);
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject(ModelConstants.BOOK, bookTo);

@@ -35,8 +35,8 @@ public class BookServiceImpl implements BookService {
 	}
 
 	@Override
-	public BookTo findBookByID(String id) throws AmbiguousIdException {
-		List<BookEntity> booksFound = bookRepository.findBookByID(Long.parseLong(id));
+	public BookTo findBookByID(long id) throws AmbiguousIdException {
+		List<BookEntity> booksFound = bookRepository.findBookByID(id);
 		if (booksFound.size() == 1)
 		return BookMapper.map(booksFound.get(0));
 		else

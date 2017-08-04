@@ -12,7 +12,7 @@
 <title>Books</title>
 </head>
 <body>
-	<nav class="navbar navbar-inverse">
+	<nav class="navbar navbar-fixed-top" style="background: white">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<a class="navbar-brand" href="/webstore">e-Library</a>
@@ -23,7 +23,7 @@
 							class="glyphicon glyphicon-log-in"></span> Login</a></li>
 				</sec:authorize>
 				<sec:authorize access="isAuthenticated()">
-					<li><a href="#" style="color: white"> Welcome, <sec:authentication
+					<li><a href="#"> You are logged in as:  <sec:authentication
 								property="principal.username" />
 					</a></li>
 					<li><a href="<c:url value="/j_spring_security_logout"/>">
