@@ -10,8 +10,8 @@
 </head>
 <body>
 	<section>
-		<div class="jumbotron">
-			<div class="container">
+		<div class="jumbotron" style="background-color: threeddarkshadow;">
+			<div class="container" style="color: white;">
 				<h1>${greeting}</h1>
 				<p>${info}</p>
 			</div>
@@ -19,33 +19,25 @@
 	</section>
 	<section class="container">
 		<div class="row">
-			<div class="col-sm-6 col-md-3" style="padding-bottom: 15px">
+			<div class="col-sm-6 col-md-4" style="padding-bottom: 15px">
 				<div class="thumbnail">
 					<div class="caption">
 						<h3>Books</h3>
 						<p>View available books</p>
-						<p>
-							<a href="/webstore/books" class="btn btn-default"> <span
-								class="glyphicon-info-sign glyphicon" /></span> Browse
-							</a>
-						</p>
+						<a href="/webstore/books" class="btn btn-default"> <span
+							class="glyphicon-search glyphicon" /></span> Browse
+						</a>
 					</div>
 				</div>
 			</div>
-		</div>
-	</section>
-	<section class="container">
-		<div class="row">
-			<div class="col-sm-6 col-md-3" style="padding-bottom: 15px">
+			<div class="col-sm-6 col-md-4" style="padding-bottom: 15px">
 				<div class="thumbnail">
 					<div class="caption">
 						<h3>Add book</h3>
-						<p>Create new book</p>
-						<p>
-							<a href="/webstore/books/add" class="btn btn-default"> <span
-								class="glyphicon-info-sign glyphicon" /></span> Add book
-							</a>
-						</p>
+						<p>Insert new book</p>
+						<a href="/webstore/books/add" class="btn btn-success"> <span
+							class="glyphicon-plus glyphicon" /></span> Add book
+						</a>
 					</div>
 				</div>
 			</div>

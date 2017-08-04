@@ -68,8 +68,6 @@ public class BookController {
 		return modelAndView;
 	}
 
-	// TODO: here implement methods which displays book info based on query
-	// arguments
 	@RequestMapping(value = "/find")
 	public ModelAndView booksBySearchCriteria(@RequestParam("title") String title,
 			@RequestParam("author") String author) {

@@ -10,8 +10,8 @@ import pl.spring.demo.constants.ViewNames;
 @Controller
 public class HomeController {
 
-	private static final String INFO_TEXT = "Here You shall display information about newly created TO";
-	private static final String WELCOME = "This is a welcome page";
+	private static final String INFO_TEXT = "Welcome to e-library";
+	private static final String WELCOME = "E-lib";
 
 	@RequestMapping("/")
 	public String welcome(Model model) {

@@ -39,8 +39,8 @@ public class BookControllerTest {
 	@Before
 	public void setup() {
 		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-		viewResolver.setPrefix("/WEB-INF/templates/");
-		viewResolver.setSuffix(".html");
+		viewResolver.setPrefix("/WEB-INF/views/");
+		viewResolver.setSuffix(".jsp");
 
 		mockMvc = MockMvcBuilders.standaloneSetup(bookController).setViewResolvers(viewResolver).build();
 	}
@@ -74,12 +74,12 @@ public class BookControllerTest {
 		Mockito.when(bookService.findBooksByAuthor(Mockito.anyString())).thenReturn(allBooks);
 		Mockito.when(bookService.findBooksByTitle(Mockito.anyString())).thenReturn(allBooks);
 		// when
-		ResultActions resultActions = mockMvc.perform(get("/books/find/?title=one&author=two"));
+		ResultActions resultActions = mockMvc.perform(get("/books/find/?title=title&author=author"));
 		// then
+		Mockito.verify(bookService).findBooksByAuthor("author");
+		Mockito.verify(bookService).findBooksByTitle("title");
 		resultActions.andExpect(view().name(ViewNames.BOOKS))
 				.andExpect(model().attribute(ModelConstants.BOOK_LIST, allBooks));
-		Mockito.verify(bookService).findBooksByAuthor("two");
-		Mockito.verify(bookService).findBooksByTitle("one");
 	}
 
 	@Test
